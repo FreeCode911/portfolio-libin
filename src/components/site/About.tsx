@@ -1,6 +1,6 @@
 import SectionHeader from './SectionHeader'
-import SpotlightCard from '../SpotlightCard/SpotlightCard'
 import PixelCard from '../PixelCard/PixelCard'
+import TechChip from '../TechChip/TechChip'
 import AnimatedContent from '../AnimatedContent/AnimatedContent'
 import { profile, focusAreas } from '../../data'
 
@@ -37,16 +37,8 @@ export default function About() {
 
           <AnimatedContent distance={24} duration={0.7} delay={0.12} blur={4}>
           <div className="flex flex-wrap gap-2">
-            {focusAreas.map((area) => (
-              <SpotlightCard
-                key={area}
-                theme="dark"
-                softness={0.55}
-                spotlightSize={180}
-                className="chip cursor-default select-none text-xs hover:text-ink"
-              >
-                {area}
-              </SpotlightCard>
+            {focusAreas.map((area, i) => (
+              <TechChip key={area} item={area} index={i} activity hoverable />
             ))}
           </div>
           </AnimatedContent>

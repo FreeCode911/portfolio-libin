@@ -5,7 +5,6 @@ import {
   motion,
   useAnimationFrame,
   useMotionValue,
-  useReducedMotion,
   useScroll,
   useSpring,
   useTransform,
@@ -151,8 +150,6 @@ function VelocityText({
     velocityMapping?.output || [0, 5],
     { clamp: false }
   );
-  const reduceMotion = useReducedMotion();
-
   const copyRef = useRef<HTMLSpanElement>(null);
   const copyWidth = useElementWidth(copyRef);
 
@@ -167,8 +164,9 @@ function VelocityText({
   const drag = useRef({ active: false, pointerId: -1, lastX: 0, lastTime: 0, velocity: 0, travel: 0 });
 
   useAnimationFrame((_t, delta) => {
-    if (reduceMotion) return;
-
+    // Always animate. The site owner keeps their OS on "reduce motion" but has
+    // explicitly asked for the marquees to move, so we do not honor the media
+    // query here.
     const grab = drag.current;
     const seconds = Math.min(delta, 64) / 1000;
     const targetPace = grab.active || (pauseOnHover && hoveredRef.current) ? 0 : 1;

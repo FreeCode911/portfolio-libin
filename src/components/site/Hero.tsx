@@ -1,7 +1,7 @@
-import Beams from '../Beams/Beams'
+import LetterGlitch from '../LetterGlitch/LetterGlitch'
 import SplitText from '../SplitText/SplitText'
 import RotatingText from '../RotatingText/RotatingText'
-import Magnet from '../Magnet/Magnet'
+import { motion } from 'motion/react'
 import GradientText from '../GradientText/GradientText'
 import ShinyText from '../ShinyText/ShinyText'
 import StarBorder from '../StarBorder/StarBorder'
@@ -11,7 +11,7 @@ export default function Hero() {
   return (
     <section id="top" className="relative flex min-h-[100svh] items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
-        <Beams />
+        <LetterGlitch />
         <div className="absolute inset-0 bg-gradient-to-b from-veil/40 via-transparent to-veil" />
       </div>
 
@@ -53,7 +53,13 @@ export default function Hero() {
         </p>
 
         <div className="mt-4 flex flex-wrap items-center justify-center gap-4">
-          <Magnet padding={46} magnetStrength={2.2}>
+          <motion.div
+            whileHover={{ y: -3, scale: 1.03, boxShadow: '0 10px 30px -10px rgba(124, 108, 255, 0.55)' }}
+            whileTap={{ scale: 0.96 }}
+            transition={{ type: 'spring', stiffness: 420, damping: 22 }}
+            className="inline-block rounded-full"
+            style={{ boxShadow: '0 0 0 0 rgba(124, 108, 255, 0)' }}
+          >
             <StarBorder
               as="a"
               href="#projects"
@@ -67,8 +73,14 @@ export default function Hero() {
             >
               View my work
             </StarBorder>
-          </Magnet>
-          <Magnet padding={46} magnetStrength={2.2}>
+          </motion.div>
+          <motion.div
+            whileHover={{ y: -3, scale: 1.03, boxShadow: '0 10px 30px -10px rgba(78, 199, 255, 0.45)' }}
+            whileTap={{ scale: 0.96 }}
+            transition={{ type: 'spring', stiffness: 420, damping: 22 }}
+            className="inline-block rounded-xl"
+            style={{ boxShadow: '0 0 0 0 rgba(78, 199, 255, 0)' }}
+          >
             <a
               href={profile.links.github}
               target="_blank"
@@ -77,7 +89,7 @@ export default function Hero() {
             >
               GitHub →
             </a>
-          </Magnet>
+          </motion.div>
         </div>
 
         <ShinyText

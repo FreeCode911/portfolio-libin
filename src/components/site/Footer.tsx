@@ -37,7 +37,7 @@ const explore: LinkItem[] = [
 const builds: LinkItem[] = [
   { label: 'ShiftAPI', sub: '15+ AI models', href: profile.links.shiftapi, external: true },
   { label: 'LykCloud', sub: 'the parent company', href: profile.links.lykcloud, external: true },
-  { label: 'PteroServerBot', sub: 'Pterodactyl Discord bot', href: profile.links.discordBot, external: true },
+  { label: 'MineNotify', sub: 'Discord server panel', href: profile.links.discordBot, external: true },
   { label: 'Minolink', sub: 'free URL shortener', href: 'https://minolink.us.kg/', external: true },
 ]
 

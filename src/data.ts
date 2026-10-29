@@ -43,13 +43,13 @@ export const projects: Project[] = [
     cta: 'Visit LykCloud',
   },
   {
-    title: 'PteroServerBot',
-    subtitle: 'Discord bot for Pterodactyl',
+    title: 'MineNotify',
+    subtitle: 'Discord server panel',
     description:
-      'A powerful Discord bot that manages Pterodactyl panel servers — user authentication, server creation and built-in resource templates.',
-    tags: ['Discord', 'Python', 'Pterodactyl'],
+      'A self-updating Discord panel that posts your server icon, colored MOTD, player count and ping as a rendered card, plus a 24-hour player graph underneath — no dashboard needed.',
+    tags: ['Discord', 'Panel', 'Minecraft'],
     href: profile.links.discordBot,
-    cta: 'View on GitHub',
+    cta: 'View MineNotify',
   },
   {
     title: 'DomainForge',

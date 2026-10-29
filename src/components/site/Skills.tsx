@@ -57,7 +57,7 @@ export default function Skills() {
             rel="noreferrer"
             className="text-primary transition-colors hover:text-ink hover:underline"
           >
-            github.com/Freecode911
+            github.com/libinvm20
           </a>
         </div>
       </div>

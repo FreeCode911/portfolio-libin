@@ -42,13 +42,13 @@ const builds: LinkItem[] = [
 ]
 
 const reach: LinkItem[] = [
-  { label: 'GitHub', sub: '@Freecode911', href: profile.links.github, external: true },
+  { label: 'GitHub', sub: '@libinvm20', href: profile.links.github, external: true },
   { label: 'YouTube', sub: '@LegendYt4k', href: profile.links.youtube, external: true },
   { label: 'RapidAPI', sub: 'ShiftAPI listing', href: profile.links.rapidapi, external: true },
 ]
 
 const socials = [
-  { label: 'GitHub — Freecode911', href: profile.links.github, icon: <GitHubIcon className="h-[18px] w-[18px]" /> },
+  { label: 'GitHub — libinvm20', href: profile.links.github, icon: <GitHubIcon className="h-[18px] w-[18px]" /> },
   { label: 'YouTube — LegendYt4k', href: profile.links.youtube, icon: <YouTubeIcon className="h-[18px] w-[18px]" /> },
   { label: 'LykCloud', href: profile.links.lykcloud, icon: <GlobeIcon className="h-[18px] w-[18px]" /> },
 ]
@@ -75,7 +75,7 @@ type ChannelItem = {
 const channels: ChannelItem[] = [
   {
     label: 'GitHub',
-    sub: 'github.com/Freecode911',
+    sub: 'github.com/libinvm20',
     href: profile.links.github,
     color: '#e5d4ed',
     icon: <GitHubIcon className="size-5" />,

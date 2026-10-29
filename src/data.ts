@@ -57,7 +57,7 @@ export const projects: Project[] = [
     description:
       'Create, manage and organize Cloudflare subdomains directly from a Discord server — no dashboard needed.',
     tags: ['Discord', 'discord.py', 'Cloudflare'],
-    href: 'https://github.com/Freecode911/DomainForge',
+    href: 'https://github.com/libinvm20/DomainForge',
     cta: 'View on GitHub',
   },
   {
@@ -75,7 +75,7 @@ export const projects: Project[] = [
     description:
       'Anonymous file uploader using GitHub cloud storage — drop a file, get a shareable link. No accounts, no tracking.',
     tags: ['Tooling', 'GitHub API'],
-    href: 'https://github.com/Freecode911/AnoUpload',
+    href: 'https://github.com/libinvm20/AnoUpload',
     cta: 'View on GitHub',
   },
 ]
@@ -176,12 +176,12 @@ export function levelWord(level: number): string {
   return 'familiar'
 }
 
-/** Snapshot from a live audit of github.com/Freecode911 (26 original repos). */
+/** Snapshot from a live audit of github.com/libinvm20 (26 original repos). */
 export const githubAudit = {
   originalRepos: 26,
   forks: 6,
   topLanguages: ['JavaScript', 'HTML', 'TypeScript'],
-  url: 'https://github.com/Freecode911',
+  url: 'https://github.com/libinvm20',
   audited: 'Oct 2026',
 }
 

@@ -47,7 +47,7 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50">
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-px origin-left bg-gradient-to-r from-primary via-[#4ec7ff] to-[#ff7ce5]"
+        className="pointer-events-none absolute inset-x-0 top-0 h-px origin-left bg-gradient-to-r from-primary via-[#a9a3d8] to-[#5941a9]"
         style={{ scaleX: progress }}
       />
       <nav className="container-x mt-3 flex items-center justify-between gap-3 md:mt-4">
@@ -66,8 +66,8 @@ export default function Navbar() {
           <ShinyText
             text={profile.name}
             speed={3.6}
-            color="#eef1fb"
-            shineColor="#8de9ff"
+            color="#e5d4ed"
+            shineColor="#a9a3d8"
             className="font-mono text-sm font-bold tracking-tight"
           />
         </a>
@@ -100,11 +100,11 @@ export default function Navbar() {
         {/* action chip */}
         {/* action chip */}
         <motion.div
-          whileHover={{ y: -2, scale: 1.05, boxShadow: '0 8px 22px -8px rgba(124, 108, 255, 0.5)' }}
+          whileHover={{ y: -2, scale: 1.05, boxShadow: '0 8px 22px -8px rgba(109, 114, 195, 0.5)' }}
           whileTap={{ scale: 0.94 }}
           transition={{ type: 'spring', stiffness: 420, damping: 22 }}
           className="inline-block"
-          style={{ boxShadow: '0 0 0 0 rgba(124, 108, 255, 0)' }}
+          style={{ boxShadow: '0 0 0 0 rgba(109, 114, 195, 0)' }}
         >
           <a
             href={profile.links.github}

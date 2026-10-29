@@ -3,24 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LegendYt4k — Developer &amp; Creator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <title>Libin V M — Developer &amp; Creator</title>
     <meta
       name="description"
       content="Libin V M — online as LegendYt4k (GitHub: Freecode911) — developer and creator behind LykCloud Pvt Ltd and ShiftAPI. I build APIs, Discord bots, cloud tools and self-hosted things."
     />
+    <meta name="keywords" content="Libin V M, LegendYt4k, Freecode911, developer, creator, Discord bot developer, ShiftAPI, LykCloud, web developer, API developer, Python, TypeScript, JavaScript, Node.js, React, Cloudflare" />
+    <meta name="author" content="Libin V M" />
+    <meta name="robots" content="index, follow" />
+    <meta name="generator" content="Vite + React" />
     <meta name="color-scheme" content="dark" />
-    <meta name="theme-color" content="#04050a" />
+    <meta name="theme-color" content="#1d1128" />
     <link rel="icon" href="https://avatars.githubusercontent.com/u/174950288?v=4" />
     <link rel="apple-touch-icon" href="https://avatars.githubusercontent.com/u/174950288?v=4" />
+    <link rel="canonical" href="https://freecode911.github.io/" />
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="LegendYt4k — Developer &amp; Creator" />
+    <meta property="og:url" content="https://freecode911.github.io/" />
+    <meta property="og:title" content="Libin V M — Developer &amp; Creator" />
     <meta
       property="og:description"
       content="Building ShiftAPI, LykCloud, Discord bots and open-source tools. Crack the code."
     />
     <meta property="og:image" content="https://avatars.githubusercontent.com/u/174950288?v=4" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta property="og:image:alt" content="Libin V M avatar" />
+    <meta property="og:site_name" content="Libin V M" />
+    <meta property="og:locale" content="en_IN" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Libin V M — Developer &amp; Creator" />
+    <meta
+      name="twitter:description"
+      content="Building ShiftAPI, LykCloud, Discord bots and open-source tools. Crack the code."
+    />
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/174950288?v=4" />
+    <meta name="twitter:creator" content="@LegendYt4k" />
+    <meta name="twitter:site" content="@LegendYt4k" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;600&display=swap"
       rel="stylesheet"
@@ -28,265 +49,75 @@
       onload="this.media='all'"
     />
     <style>
-      /* Pre-React boot screen — pure CSS, no dependencies */
-      #loader {
+      /* Pre-React fallback shell — covers the gap before React mounts the real
+         boot overlay (Waves canvas). Stays up (with the error box) if JS fails. */
+      #boot {
         position: fixed;
         inset: 0;
         z-index: 10000;
         display: grid;
         place-items: center;
         overflow: hidden;
-        background: #04050a;
-        transition: visibility 0s linear 0.8s;
+        background: #1d1128;
       }
-      #loader.is-done {
-        visibility: hidden;
-        pointer-events: none;
-        animation: loader-aperture 0.8s cubic-bezier(0.85, 0, 0.15, 1) both;
-      }
-      #loader.is-done .loader-inner {
-        animation: loader-dive 0.8s cubic-bezier(0.85, 0, 0.15, 1) both;
-      }
-      /* The boot screen dives into itself — no fade, the site is revealed by the
-         closing aperture while the loader scales past the viewer. */
-      @keyframes loader-aperture {
-        from {
-          transform: scale(1);
-          clip-path: circle(140% at 50% 42%);
-        }
-        to {
-          transform: scale(2.2);
-          clip-path: circle(0% at 50% 42%);
-        }
-      }
-      @keyframes loader-dive {
-        from {
-          transform: scale(1);
-          filter: blur(0);
-        }
-        to {
-          transform: scale(1.5);
-          filter: blur(2px);
-        }
-      }
-      #loader .aura {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(90px);
-        will-change: transform;
-      }
-      #loader #g1 {
-        width: 520px;
-        height: 520px;
-        left: -160px;
-        top: -180px;
-        background: radial-gradient(circle, rgba(124, 108, 255, 0.42), transparent 70%);
-        animation: drift-a 14s ease-in-out infinite alternate;
-      }
-      #loader #g2 {
-        width: 560px;
-        height: 560px;
-        right: -200px;
-        bottom: -220px;
-        background: radial-gradient(circle, rgba(78, 199, 255, 0.32), transparent 70%);
-        animation: drift-b 17s ease-in-out infinite alternate;
-      }
-      #loader #g3 {
-        width: 440px;
-        height: 440px;
-        left: 50%;
-        top: 58%;
-        margin-left: -220px;
-        background: radial-gradient(circle, rgba(255, 124, 229, 0.24), transparent 70%);
-        animation: drift-a 20s ease-in-out infinite alternate-reverse;
-      }
-      #loader .grid {
-        position: absolute;
-        inset: 0;
-        background-image: radial-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px);
-        background-size: 26px 26px;
-        -webkit-mask-image: radial-gradient(62% 55% at 50% 50%, #000 20%, transparent 78%);
-        mask-image: radial-gradient(62% 55% at 50% 50%, #000 20%, transparent 78%);
-        opacity: 0.35;
-      }
-      #loader .vig {
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(115% 85% at 50% 42%, transparent 55%, rgba(2, 3, 7, 0.85) 100%);
-      }
-      #loader #boot-grid {
-        position: absolute;
-        inset: 0;
-        opacity: 0.9;
-        -webkit-mask-image: radial-gradient(58% 48% at 50% 42%, transparent 26%, #000 78%);
-        mask-image: radial-gradient(58% 48% at 50% 42%, transparent 26%, #000 78%);
-      }
-      #loader .loader-inner {
-        position: relative;
-        z-index: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 24px;
-        padding: 24px;
-        animation: rise 0.7s ease both;
-      }
-      #loader .badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 9px;
-        padding: 8px 15px;
-        border: 1px solid rgba(255, 255, 255, 0.09);
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.03);
-        font: 500 10px/1 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
-        letter-spacing: 0.3em;
-        text-transform: uppercase;
-        color: #9aa3b8;
-      }
-      #loader .badge i {
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background: #34d399;
-        box-shadow: 0 0 10px 2px rgba(52, 211, 153, 0.6);
-        animation: pulse 1.6s ease-in-out infinite;
-      }
-      #loader .wordmark {
-        margin: 0;
-        font: 800 clamp(44px, 10vw, 88px) / 0.95 'Inter', 'Segoe UI', system-ui, sans-serif;
+      #boot .boot-mark {
+        font: 800 clamp(40px, 9vw, 72px) / 0.95 'Inter', 'Segoe UI', system-ui, sans-serif;
         letter-spacing: -0.03em;
-        background: linear-gradient(
-          100deg,
-          #e2e8f4 0%,
-          #a5b4ff 24%,
-          #8de9ff 38%,
-          #ffb3f7 52%,
-          #e2e8f4 76%
-        );
-        background-size: 200% 100%;
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        animation: sweep 5s linear infinite;
+        color: #e5d4ed;
+        animation: boot-pulse 1.6s ease-in-out infinite;
       }
-      #loader .track {
-        position: relative;
-        width: min(270px, 64vw);
-        height: 3px;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.08);
-        overflow: hidden;
-      }
-      #loader .track i {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width: 42%;
-        border-radius: 999px;
-        background: linear-gradient(90deg, transparent, #7c6cff 30%, #4ec7ff 60%, #ff7ce5 85%, transparent);
-        filter: drop-shadow(0 0 6px rgba(124, 108, 255, 0.9));
-        animation: slide 1.5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
-      }
-      #loader .status {
-        position: relative;
-        min-width: 300px;
-        height: 15px;
-        font: 600 10px/15px 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
-        letter-spacing: 0.26em;
-        text-transform: uppercase;
-        color: #7c869c;
-        text-align: center;
-      }
-      #loader .status span {
-        position: absolute;
-        inset: 0;
-        opacity: 0;
-        animation: swap 5.4s ease-in-out infinite;
-      }
-      #loader .status span:nth-child(2) {
-        animation-delay: 1.8s;
-      }
-      #loader .status span:nth-child(3) {
-        animation-delay: 3.6s;
-      }
-      #loader .hint {
-        position: absolute;
-        z-index: 1;
-        left: 0;
-        right: 0;
-        bottom: 26px;
-        margin: 0;
-        text-align: center;
-        font: 400 10px/1.7 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: #4b5467;
-        opacity: 0;
-        animation: appear 0.8s ease 9s forwards;
-      }
-      @keyframes pulse {
+      @keyframes boot-pulse {
         50% {
-          opacity: 0.4;
-          transform: scale(0.75);
-        }
-      }
-      @keyframes sweep {
-        to {
-          background-position: -200% 0;
-        }
-      }
-      @keyframes slide {
-        from {
-          transform: translateX(-110%);
-        }
-        to {
-          transform: translateX(250%);
-        }
-      }
-      @keyframes swap {
-        0%,
-        24% {
-          opacity: 1;
-          transform: none;
-        }
-        31%,
-        96% {
-          opacity: 0;
-          transform: translateY(3px);
-        }
-        100% {
-          opacity: 0;
-          transform: none;
-        }
-      }
-      @keyframes rise {
-        from {
-          opacity: 0;
-          transform: translateY(16px);
-        }
-        to {
-          opacity: 1;
-          transform: none;
-        }
-      }
-      @keyframes drift-a {
-        to {
-          transform: translate(90px, 70px) scale(1.18);
-        }
-      }
-      @keyframes drift-b {
-        to {
-          transform: translate(-80px, -90px) scale(1.12);
-        }
-      }
-      @keyframes appear {
-        to {
-          opacity: 1;
+          opacity: 0.45;
         }
       }
     </style>
+    <!-- JSON-LD structured data: Person + WebSite -->
+    <script type="application/ld+json">
+      [
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "Libin V M",
+          "alternateName": "LegendYt4k",
+          "url": "https://freecode911.github.io/",
+          "image": "https://avatars.githubusercontent.com/u/174950288?v=4",
+          "jobTitle": "Developer & Creator",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "LykCloud Pvt Ltd",
+            "url": "https://lykcloud.com"
+          },
+          "sameAs": [
+            "https://github.com/Freecode911",
+            "https://www.youtube.com/@LegendYt4k",
+            "https://x.com/LegendYt4k"
+          ],
+          "knowsAbout": [
+            "JavaScript",
+            "TypeScript",
+            "HTML",
+            "CSS",
+            "Discord.py",
+            "Node.js",
+            "React",
+            "Cloudflare"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Libin V M — Developer & Creator",
+          "url": "https://freecode911.github.io/",
+          "description": "Libin V M — online as LegendYt4k (GitHub: Freecode911) — developer and creator behind LykCloud Pvt Ltd and ShiftAPI. I build APIs, Discord bots, cloud tools and self-hosted things.",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://freecode911.github.io/",
+            "query-input": "required name=search_term_string"
+          }
+        }
+      ]
+    </script>
   </head>
   <body>
     <script>
@@ -296,7 +127,7 @@
           box = document.createElement('div');
           box.id = 'errbox';
           box.style.cssText =
-            'position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#7f1d1d;color:#fff;padding:14px;font:14px/1.5 monospace;white-space:pre-wrap;word-break:break-word;';
+            'position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#5941a9;color:#e5d4ed;padding:14px;font:14px/1.5 monospace;white-space:pre-wrap;word-break:break-word;';
           (document.body || document.documentElement).appendChild(box);
         }
         box.textContent = 'JS ERROR: ' + msg;
@@ -311,117 +142,12 @@
     </script>
     <div id="root"></div>
 
-    <div id="loader" role="status" aria-label="Loading portfolio">
-      <canvas id="boot-grid" aria-hidden="true"></canvas>
-      <div class="aura" id="g1"></div>
-      <div class="aura" id="g2"></div>
-      <div class="aura" id="g3"></div>
-      <div class="grid"></div>
-      <div class="vig"></div>
-      <div class="loader-inner">
-        <span class="badge"><i></i>boot sequence</span>
-        <div class="wordmark">LIBIN VM</div>
-        <div class="track"><i></i></div>
-        <div class="status" aria-hidden="true">
-          <span>loading runtime modules…</span>
-          <span>warming up the codegrid…</span>
-          <span>crack the code…</span>
-        </div>
-      </div>
-      <p class="hint">taking too long? an error report will appear below</p>
+    <div id="boot" role="status" aria-label="Loading portfolio">
+      <div class="boot-mark">LIBIN VM</div>
     </div>
 
-    <script>
-      // Boot-screen backdrop: a live glitching code matrix, painted with vanilla JS
-      // so it is alive even before React loads. Stops once the loader is removed.
-      (function () {
-        var canvas = document.getElementById('boot-grid');
-        if (!canvas) return;
-        var ctx = canvas.getContext('2d');
-        if (!ctx) return;
-
-        var COLORS = ['#7c6cff', '#4ec7ff', '#ff7ce5', '#8de9ff', '#a5b4ff'];
-        var CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789{}[]</>#=+*%&@!?~^;:'.split('');
-        var SIZE = 26;
-        var cells = [];
-        var lit = [];
-        var W = 0;
-        var H = 0;
-
-        window.__bootGrid = { frames: 0 };
-
-        function pick(list) {
-          return list[(Math.random() * list.length) | 0];
-        }
-
-        function paint(cell) {
-          ctx.clearRect(cell.x, cell.y, SIZE, SIZE);
-          ctx.globalAlpha = cell.a > 0.02 ? Math.min(1, 0.2 + cell.a * 0.8) : 1;
-          ctx.fillStyle = cell.a > 0.02 ? cell.col : 'rgba(154, 163, 184, 0.14)';
-          ctx.fillText(cell.ch, cell.x + SIZE / 2, cell.y + SIZE / 2 + 1);
-        }
-
-        function build() {
-          var dpr = Math.min(window.devicePixelRatio || 1, 2);
-          W = window.innerWidth;
-          H = window.innerHeight;
-          canvas.width = Math.round(W * dpr);
-          canvas.height = Math.round(H * dpr);
-          canvas.style.width = W + 'px';
-          canvas.style.height = H + 'px';
-          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-          ctx.font = '600 ' + Math.round(SIZE * 0.56) + "px 'JetBrains Mono', ui-monospace, Consolas, monospace";
-          ctx.textAlign = 'center';
-          ctx.textBaseline = 'middle';
-          cells = [];
-          var cols = Math.ceil(W / SIZE);
-          var rows = Math.ceil(H / SIZE);
-          for (var r = 0; r < rows; r++) {
-            for (var c = 0; c < cols; c++) {
-              cells.push({ ch: pick(CHARS), x: c * SIZE, y: r * SIZE, a: 0, col: '' });
-            }
-          }
-          ctx.clearRect(0, 0, W, H);
-          for (var i = 0; i < cells.length; i++) paint(cells[i]);
-        }
-
-        var last = performance.now();
-        var pool = 0;
-
-        function tick(now) {
-          if (!document.getElementById('loader')) return; // loader removed — stop drawing
-          requestAnimationFrame(tick);
-          window.__bootGrid.frames += 1;
-          var dt = Math.min(0.05, Math.max(0.001, (now - last) / 1000));
-          last = now;
-
-          pool += dt * 10;
-          while (pool >= 1) {
-            pool -= 1;
-            var cell = pick(cells);
-            cell.ch = pick(CHARS);
-            cell.a = 1;
-            cell.col = Math.random() < 0.12 ? 'rgba(244, 246, 251, 0.85)' : pick(COLORS);
-            lit.push(cell);
-            paint(cell);
-          }
-          for (var i = lit.length - 1; i >= 0; i--) {
-            lit[i].a -= dt / 1.1;
-            if (lit[i].a <= 0) {
-              lit[i].a = 0;
-              paint(lit[i]);
-              lit.splice(i, 1);
-            } else {
-              paint(lit[i]);
-            }
-          }
-        }
-
-        window.addEventListener('resize', build);
-        build();
-        requestAnimationFrame(tick);
-      })();
-    </script>
+    <!-- no pre-React backdrop script: the boot canvas now lives in the React
+         <BootScreen /> overlay, which mounts right after hydration -->
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

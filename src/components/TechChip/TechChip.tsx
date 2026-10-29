@@ -24,7 +24,7 @@ import {
   SiTypescript
 } from 'react-icons/si';
 
-const ACCENTS = ['#7c6cff', '#4ec7ff', '#ff7ce5', '#8de9ff'];
+const ACCENTS = ['#6d72c3', '#a9a3d8', '#5941a9', '#c7bbe2'];
 
 const TECH_ICONS: Record<string, IconType> = {
   python: SiPython,
@@ -84,7 +84,7 @@ export default function TechChip({
   hoverable = false,
   className = ''
 }: TechChipProps) {
-  const accent = muted ? 'rgba(154, 163, 184, 0.78)' : ACCENTS[index % ACCENTS.length];
+  const accent = muted ? 'rgba(162, 152, 170, 0.78)' : ACCENTS[index % ACCENTS.length];
   const iconNode: ReactNode = createElement(iconFor(item, activity), {
     'aria-hidden': true,
     className: 'size-4 shrink-0',

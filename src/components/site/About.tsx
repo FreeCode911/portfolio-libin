@@ -10,7 +10,7 @@ export default function About() {
       <div className="container-x grid items-center gap-10 md:grid-cols-[auto,1fr] md:gap-14">
         <div className="flex justify-center md:justify-start">
           <AnimatedContent distance={30} duration={0.7} blur={4}>
-            <PixelCard variant="top" gap={22} speed={40} colors={['#7c6cff', '#4ec7ff']} className="rounded-[2rem]">
+            <PixelCard variant="top" gap={22} speed={40} colors={['#6d72c3', '#a9a3d8']} className="rounded-[2rem]">
               <div className="rounded-[2rem] p-3">
                 <img
                   src={profile.avatar}
@@ -27,7 +27,7 @@ export default function About() {
 
         <div>
           <AnimatedContent distance={36} duration={0.75} blur={5}>
-            <SectionHeader kicker="who am i" title="Libin V M — a.k.a. LegendYt4k">
+            <SectionHeader index="03" kicker="who am i" title="Libin V M — a.k.a. LegendYt4k">
             I am a developer and creator building the LykCloud ecosystem: ShiftAPI for unified AI access, Discord bots
             for real server workflows, and self-hosted tooling for people who like to own their stack. When I am not
             shipping web and cloud services, I am compiling router firmware, automating YouTube uploads and breaking

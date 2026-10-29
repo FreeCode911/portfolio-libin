@@ -2,12 +2,13 @@
 
 @theme {
   --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  --color-veil: #04050a;
-  --color-ink: #f4f6fb;
-  --color-dim: #9aa3b8;
-  --color-line: rgba(158, 170, 210, 0.16);
-  --color-primary: #7c6cff;
+  --color-veil: #1d1128;
+  --color-ink: #e5d4ed;
+  --color-dim: #b3a9bd;
+  --color-line: rgba(229, 212, 237, 0.13);
+  --color-primary: #6d72c3;
 }
 
 html {
@@ -31,7 +32,7 @@ body {
 }
 
 ::selection {
-  background: rgba(124, 108, 255, 0.4);
+  background: rgba(109, 114, 195, 0.45);
 }
 
 ::placeholder {
@@ -66,4 +67,11 @@ body {
   font-weight: 800;
   letter-spacing: -0.03em;
   line-height: 1.1;
+}
+
+/* Outlined display type — the wordmark-stroke used by marquees and
+   project indices (Brand-Appart-style strips, in the lavender family). */
+@utility outlined {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(229, 212, 237, 0.38);
 }

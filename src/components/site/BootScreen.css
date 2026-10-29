@@ -1,0 +1,146 @@
+.boot {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  overflow: hidden;
+  background: #1d1128;
+}
+
+.boot__vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(115% 80% at 50% 42%, transparent 46%, rgba(29, 17, 40, 0.85) 100%);
+  pointer-events: none;
+}
+
+.boot__content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  padding: 24px;
+  user-select: none;
+}
+
+.boot__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  font: 500 10px / 1 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #a298aa;
+}
+
+.boot__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #a9a3d8;
+  box-shadow: 0 0 10px 2px rgba(169, 163, 216, 0.6);
+  animation: boot-pulse 1.6s ease-in-out infinite;
+}
+
+.boot__wordmark {
+  margin: 0;
+  display: flex;
+  font: 800 clamp(44px, 10vw, 88px) / 0.95 'Inter', 'Segoe UI', system-ui, sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.boot__gap {
+  display: inline-flex;
+  width: 0.34em;
+}
+
+.boot__letter {
+  display: inline-flex;
+  background-size: 220% 100%;
+  background-position: calc(var(--boot-i, 0) * 12%) 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 22px rgba(109, 114, 195, 0.4));
+  will-change: transform, opacity, filter;
+  animation: boot-sweep 7s linear infinite;
+}
+
+.boot__track {
+  position: relative;
+  width: min(270px, 64vw);
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.boot__track-bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 42%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, #6d72c3 30%, #a9a3d8 60%, #9f8acb 85%, transparent);
+  filter: drop-shadow(0 0 6px rgba(109, 114, 195, 0.9));
+  animation: boot-slide 1.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+.boot__status {
+  position: relative;
+  min-width: 300px;
+  height: 15px;
+  text-align: center;
+  font: 600 10px / 15px 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #8d8496;
+}
+
+.boot__status-line {
+  position: absolute;
+  inset: 0;
+}
+
+.boot__shutters {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.boot__panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  will-change: transform;
+}
+
+@keyframes boot-pulse {
+  50% {
+    opacity: 0.4;
+    transform: scale(0.75);
+  }
+}
+
+@keyframes boot-sweep {
+  to {
+    background-position: calc(var(--boot-i, 0) * 12% + 100%) 0;
+  }
+}
+
+@keyframes boot-slide {
+  from {
+    transform: translateX(-110%);
+  }
+  to {
+    transform: translateX(250%);
+  }
+}

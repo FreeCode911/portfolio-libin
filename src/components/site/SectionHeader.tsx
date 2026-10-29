@@ -1,19 +1,27 @@
 import type { ReactNode } from 'react'
 
+/* Editorial section header — numbered rule row (a la award-site systems)
+   with the display-face title beneath it. */
 export default function SectionHeader({
+  index,
   kicker,
   title,
   children,
 }: {
+  index?: string
   kicker: string
   title: string
   children?: ReactNode
 }) {
   return (
     <div className="mb-10 md:mb-14">
-      <p className="mb-2 font-mono text-xs tracking-[0.3em] text-primary uppercase">{kicker}</p>
-      <h2 className="section-title text-ink">{title}</h2>
-      {children ? <p className="mt-3 max-w-[62ch] text-sm leading-relaxed text-dim md:text-base">{children}</p> : null}
+      <div className="flex items-center gap-4" aria-hidden="true">
+        {index ? <span className="font-mono text-[0.66rem] tracking-[0.2em] text-[#a9a3d8]">{index}</span> : null}
+        <span className="h-px flex-1 bg-line" />
+        <span className="font-mono text-[0.66rem] uppercase tracking-[0.34em] text-[#c7bbe2]">{kicker}</span>
+      </div>
+      <h2 className="section-title font-display mt-4 text-ink md:mt-5">{title}</h2>
+      {children ? <p className="mt-3 max-w-[62ch] text-sm leading-relaxed text-[#c7bbe2] md:text-base">{children}</p> : null}
     </div>
   )
 }

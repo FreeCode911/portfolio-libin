@@ -62,15 +62,17 @@ export default function RotatingText({
         const from = staggerFrom === 'first' ? 'start' : staggerFrom === 'last' ? 'end' : staggerFrom;
         gsap.fromTo(
           chars,
-          { y: '46%', opacity: 0, rotateX: -60, filter: 'blur(5px)' },
+          { yPercent: 115, opacity: 0, rotateX: -78, scale: 0.72, filter: 'blur(7px)' },
           {
-            y: '0%',
+            yPercent: 0,
             opacity: 1,
             rotateX: 0,
+            scale: 1,
             filter: 'blur(0px)',
-            duration: 0.34,
-            ease: 'power3.out',
-            stagger: { each: staggerDuration, from }
+            duration: 0.58,
+            ease: 'back.out(1.65)',
+            stagger: { each: Math.max(staggerDuration, 0.02), from },
+            transformOrigin: '50% 100%'
           }
         );
       }

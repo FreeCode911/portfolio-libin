@@ -7,7 +7,7 @@ export const profile = {
   links: {
     github: 'https://github.com/libinvm20',
     youtube: 'https://www.youtube.com/@LegendYt4k',
-    discordBot: 'https://github.com/libinvm20/PteroServerBot',
+    discordBot: 'https://minenotify.xi.to/',
     lykcloud: 'https://lykcloud.com',
     shiftapi: 'https://shiftapi.qzz.io',
     rapidapi: 'https://rapidapi.com/FreeCode911/api/flux-api-4-custom-models-100-style/',

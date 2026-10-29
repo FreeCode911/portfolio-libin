@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://freecode911.github.io/sitemap.xml
+Sitemap: https://libinvm20.github.io/sitemap.xml

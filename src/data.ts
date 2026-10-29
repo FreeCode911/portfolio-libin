@@ -5,12 +5,12 @@ export const profile = {
   role: 'Developer · Creator · Founder',
   tagline: 'I build APIs, Discord bots and cloud tools that just work — and ship them fast.',
   links: {
-    github: 'https://github.com/Freecode911',
+    github: 'https://github.com/libinvm20',
     youtube: 'https://www.youtube.com/@LegendYt4k',
-    discordBot: 'https://github.com/Freecode911/PteroServerBot',
+    discordBot: 'https://github.com/libinvm20/PteroServerBot',
     lykcloud: 'https://lykcloud.com',
     shiftapi: 'https://shiftapi.lykcloud.com',
-    rapidapi: 'https://rapidapi.com/FreeCode911/api/flux-api-4-custom-models-100-style/',
+    rapidapi: 'https://rapidapi.com/libinvm20/api/flux-api-4-custom-models-100-style/',
   },
 }
 

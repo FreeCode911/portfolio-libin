@@ -75,3 +75,28 @@ body {
   color: transparent;
   -webkit-text-stroke: 1.5px rgba(229, 212, 237, 0.38);
 }
+
+/* Custom scrollbar — in-palette only (midnight-violet track, lavender
+   thumb, primary on hover). Thin and unobtrusive so it never competes
+   with the content. */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-veil);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-dim);
+  border-radius: 9999px;
+  border: 3px solid var(--color-veil);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+::-webkit-scrollbar-thumb:active {
+  background: var(--color-ink);
+}
+::-webkit-scrollbar-corner {
+  background: var(--color-veil);
+}

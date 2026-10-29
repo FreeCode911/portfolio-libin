@@ -55,21 +55,8 @@
         position: fixed;
         inset: 0;
         z-index: 10000;
-        display: grid;
-        place-items: center;
         overflow: hidden;
         background: #1d1128;
-      }
-      #boot .boot-mark {
-        font: 800 clamp(40px, 9vw, 72px) / 0.95 'Inter', 'Segoe UI', system-ui, sans-serif;
-        letter-spacing: -0.03em;
-        color: #e5d4ed;
-        animation: boot-pulse 1.6s ease-in-out infinite;
-      }
-      @keyframes boot-pulse {
-        50% {
-          opacity: 0.45;
-        }
       }
     </style>
     <!-- JSON-LD structured data: Person + WebSite -->
@@ -142,9 +129,7 @@
     </script>
     <div id="root"></div>
 
-    <div id="boot" role="status" aria-label="Loading portfolio">
-      <div class="boot-mark">LIBIN VM</div>
-    </div>
+    <div id="boot" role="status" aria-label="Loading portfolio" />
 
     <!-- no pre-React backdrop script: the boot canvas now lives in the React
          <BootScreen /> overlay, which mounts right after hydration -->
